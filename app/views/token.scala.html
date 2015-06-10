@@ -1,0 +1,15 @@
+@(accessToken: String, decodedToken: List[String])
+
+@main("Callback from OAuth Authorization Server") {
+
+    <div>Access token: @accessToken</div>
+    <div>
+        Decoded token:
+        <ul>
+            @for(value <- decodedToken) {
+                <li>@value</li>
+            }
+        </ul>
+    </div>
+    <div><a href="@routes.Application.openid(accessToken)">Get User info</a></div>
+}

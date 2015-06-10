@@ -1,0 +1,13 @@
+@(userInfo: Map[String, String])
+
+@main("Callback from OAuth Authorization Server") {
+
+    <div>
+        User info:
+        <ul>
+            @for((key, value) <- userInfo) {
+                <li>@key -> @value</li>
+            }
+        </ul>
+    </div>
+}

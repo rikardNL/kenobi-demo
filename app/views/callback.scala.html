@@ -1,0 +1,15 @@
+@(code: String, queryString: Map[String, String])
+
+@main("Callback from OAuth Authorization Server") {
+
+    <div>Code: @code</div>
+    <div>
+        Query string:
+        <ul>
+            @for((key, value) <- queryString) {
+                <li>@key: @value</li>
+            }
+        </ul>
+    </div>
+    <div><a href="@routes.Application.token(code)">Get token</a></div>
+}
